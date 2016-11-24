@@ -40,3 +40,20 @@ def second_anagram(string1, string2)
   end
   return false
 end
+
+def third_anagram(string1, string2)
+  string1.chars.sort.join == string2.chars.sort.join
+end
+
+def fourth_anagram(string1, string2)
+  letters1 = Hash.new{0}
+  letters2 = Hash.new{0}
+  string1.chars.each do |el|
+    letters1[el] += 1
+  end
+  string2.chars.each do |el|
+    letters2[el] += 1
+  end
+
+  letters1 == letters2
+end
